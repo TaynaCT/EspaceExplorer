@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class FloatingText : MonoBehaviour {
 
     public Animator textAnimator;
-    float timer = 20; //timer para aparição do texto após iniciado a aplicação
+    float timer = 0; //timer para aparição do texto após iniciado a aplicação
     Text screenText; //texto que deverá aparecer na tela
    
     void Start()
@@ -19,9 +19,11 @@ public class FloatingText : MonoBehaviour {
 
     void Update()
     {
-        timer -= .5f;
+        timer += Time.deltaTime;
 
-        if (timer < 0)
+        Debug.Log(timer);
+
+        if (timer > 10)
         {
             textAnimator.SetBool("FadeIN", true);
         }
@@ -33,7 +35,8 @@ public class FloatingText : MonoBehaviour {
 
             //ao fim da animação, o objeto referente ao texto é destruido
             AnimatorClipInfo[] clipInfo = textAnimator.GetCurrentAnimatorClipInfo(0);
-            Destroy(gameObject, clipInfo[0].clip.length);           
+            Destroy(gameObject, clipInfo[0].clip.length);
+            timer = 0;        
         }
 
     }
@@ -44,6 +47,7 @@ public class FloatingText : MonoBehaviour {
     /// <param name="text"></param>
     public void SetText(string text)
     {
+        screenText = textAnimator.GetComponent<Text>();
         screenText.text = text;
     }
 }
