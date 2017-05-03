@@ -10,7 +10,8 @@ public class FloatingTextController : MonoBehaviour {
     int indice = 0;
 
     string[] arrayText = { "Press ... or ...\n to rotate the camera",
-                           "Select a object " };
+                           "Select a object ",
+    "dsdgsgfg"};
 
     public void Update()
     {
