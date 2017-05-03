@@ -10,25 +10,26 @@ public class FloatingText : MonoBehaviour {
     public Animator textAnimator;
     float timer = 0; //timer para aparição do texto após iniciado a aplicação
     Text screenText; //texto que deverá aparecer na tela
+    bool itsOn;
    
     void Start()
     {        
         textAnimator.GetComponent<Animator>();
         screenText = textAnimator.GetComponent<Text>();
+        itsOn = true;
     }
 
     void Update()
     {
         timer += Time.deltaTime;
-
-        Debug.Log(timer);
-
-        if (timer > 10)
+        
+        if (timer > 3 && itsOn)
         {
-            textAnimator.SetBool("FadeIN", true);
+            textAnimator.SetBool("FadeIN", true);            
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        //condição para desaparecer o texto
+        if ( Input.anyKeyDown)
         {
             textAnimator.SetBool("FadeIN", false);
             textAnimator.SetBool("FadeOUT", true);
@@ -47,7 +48,7 @@ public class FloatingText : MonoBehaviour {
     /// <param name="text"></param>
     public void SetText(string text)
     {
-        screenText = textAnimator.GetComponent<Text>();
+        screenText = textAnimator.GetComponent<Text>();        
         screenText.text = text;
     }
 }
