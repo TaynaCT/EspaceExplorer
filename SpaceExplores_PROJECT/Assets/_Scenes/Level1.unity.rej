@@ -1,0 +1,20 @@
+diff a/SpaceExplores_PROJECT/Assets/_Scenes/Level1.unity b/SpaceExplores_PROJECT/Assets/_Scenes/Level1.unity	(rejected hunks)
+@@ -117,15 +117,15 @@
+     m_Modifications:
+     - target: {fileID: 4820740011311754, guid: 0773311b4ff9c2445b3012749e5f31dc, type: 2}
+       propertyPath: m_LocalPosition.x
+-      value: -0.8782904
++      value: 0.793
+       objectReference: {fileID: 0}
+     - target: {fileID: 4820740011311754, guid: 0773311b4ff9c2445b3012749e5f31dc, type: 2}
+       propertyPath: m_LocalPosition.y
+-      value: 0.18687975
++      value: 0.218
+       objectReference: {fileID: 0}
+     - target: {fileID: 4820740011311754, guid: 0773311b4ff9c2445b3012749e5f31dc, type: 2}
+       propertyPath: m_LocalPosition.z
+-      value: 0.6827357
++      value: 2.327
+       objectReference: {fileID: 0}
+     - target: {fileID: 4820740011311754, guid: 0773311b4ff9c2445b3012749e5f31dc, type: 2}
+       propertyPath: m_LocalRotation.x

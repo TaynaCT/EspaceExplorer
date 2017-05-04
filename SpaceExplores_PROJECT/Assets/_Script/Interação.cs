@@ -30,7 +30,7 @@ public class Interação : MonoBehaviour
         {
             for (int i = 0; i <= 5; i++)
             {
-                if ((Vector3.Distance(metais[i].transform.position, player.transform.position) < 0.5) && ((Physics.Raycast(player.transform.position, player.transform.forward, 10) == true)))
+                if ((Vector3.Distance(metais[i].transform.position, player.transform.position) < 0.5) && ((Physics.Raycast(player.transform.position, player.transform.forward, .5f) == true)))
                 {
                     recursos++;
                     audio.Play();
