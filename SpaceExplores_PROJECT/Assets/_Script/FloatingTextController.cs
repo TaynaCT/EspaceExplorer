@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+    
 
 public class FloatingTextController : MonoBehaviour {
 
+<<<<<<< HEAD
     public FloatingText screenText = null;
     public TextAsset textFile;
     bool showText; // Quando true é ativado a criação do texto
@@ -12,6 +14,7 @@ public class FloatingTextController : MonoBehaviour {
     int indice = 0;    
     float timer = 0;  
 
+<<<<<<< HEAD
     string[] arrayText;
 
     void Start()
@@ -21,6 +24,13 @@ public class FloatingTextController : MonoBehaviour {
         showText = true;
         flag = false;
     }
+=======
+    string[] arrayText = { "Aonde é que esta o resto da tripulção?", "Precione Z ou C\npara procurar no mapa", "Va a nave\n Precione E para interagir",  };
+    float timer = 0;
+=======
+    public GameObject screenText;      
+>>>>>>> origin
+>>>>>>> be81e2b15a0fbff931bb45cf08db7504d84dd5d2
 
     public void Update()
     {
@@ -71,6 +81,7 @@ public class FloatingTextController : MonoBehaviour {
     }
 
     public void CreatingText(string text)
+<<<<<<< HEAD
     {
         FloatingText instance = Instantiate(screenText);
         instance.transform.SetParent(this.transform, false);
@@ -82,4 +93,15 @@ public class FloatingTextController : MonoBehaviour {
     {
         flag = true;
     }
+=======
+    {      
+        GameObject instance = Instantiate(screenText);
+            
+        instance.transform.SetParent(this.transform, false);
+        instance.GetComponent<FloatingText>().SetText(text);
+        //por aqui não é possivel introduzir um novo texto
+        //instance.SetText(text);
+    }
+
+>>>>>>> origin
 }
